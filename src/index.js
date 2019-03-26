@@ -5,7 +5,7 @@ import  {createStore, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 import {Provider } from 'react-redux';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import postReducer from './reducers/postReducer';
 
 

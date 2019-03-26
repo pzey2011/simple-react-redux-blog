@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import PostForm from './PostForm';
-import AllPosts from './AllPosts';
+import PostForm from '../containers/PostForm';
+import AllPosts from '../containers/AllPosts';
 import { connect } from 'react-redux';
-import addPost from './actions/postActions';
+import addPost from '../actions/postActions';
 
 class App extends Component {
   render() {
