@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-
-import { connect } from 'react-redux';
+import React from 'react';
 
 import Post from './Post';
 
-class AllPosts extends Component {
+const AllPosts = (props)=> {
 
-    render() {
-      let posts= this.props.posts.map((post)=>{
+
+      let posts= props.posts.map((post)=>{
           return(
             <Post post={post}/>
           );
@@ -18,12 +16,6 @@ class AllPosts extends Component {
                 {posts}
             </div>
         );
-    }
-}
 
-const mapStateToProps = (state) => {
-    return {
-        posts: state.posts
-    }
 }
-export default connect(mapStateToProps)(AllPosts);
+export default AllPosts;

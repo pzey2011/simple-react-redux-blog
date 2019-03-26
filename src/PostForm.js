@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import addPost from './actions/postActions';
 
 
-class PostForm extends Component {
+export default class PostForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const title = this.getTitle.value;
@@ -13,7 +11,7 @@ class PostForm extends Component {
       title,
       message
     };
-    this.props.dispatch(addPost(data));
+    this.props.addPost(data);
     this.getTitle.value="";
     this.getMessage.value="";
   }
@@ -30,4 +28,3 @@ class PostForm extends Component {
     );
     }
   }
-  export default connect()(PostForm);
