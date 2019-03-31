@@ -1,8 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import  {createStore, applyMiddleware} from 'redux';
-import logger from 'redux-logger';
+import  {createStore} from 'redux';
 import {Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
@@ -10,8 +9,7 @@ import postReducer from './reducers/postReducer';
 
 
 const store = createStore(
-  postReducer,
-  applyMiddleware(logger)
+  postReducer
 );
 
 
