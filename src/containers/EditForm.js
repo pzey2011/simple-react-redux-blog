@@ -5,17 +5,22 @@ import React , {Component} from 'react';
      this.handleEdit=this.handleEdit.bind(this);
      this.handleClose=this.handleClose.bind(this);
    }
+   componentDidUpdate(){
+     this.getTitle.value=this.props.post.title;
+     this.getMessage.value=this.props.post.message;
+   }
   handleEdit = (e) => {
     e.preventDefault();
     const title = this.getTitle.value;
     const message =  this.getMessage.value;
-    debugger;
     const data = {
       id: this.props.post.id,
       title,
       message
     };
     this.props.updatePost(data);
+    this.getTitle.value=title;
+    this.getMessage.value=message;
   }
   handleClose = (e) => {
     e.preventDefault();
@@ -27,8 +32,8 @@ import React , {Component} from 'react';
         <div className="post modal-content">
           <span className="close" onClick={this.handleClose}>&times;</span>
           <form className="form" onSubmit={this.handleEdit}>
-            <input required type="text" placeholder="Enter Post Title" className="post_title" ref={(input)=>this.getTitle = input}></input>
-            <textarea required rows="5" cols="28" placeholder="Enter Post"  className="post_message" ref={(input)=>this.getMessage = input}></textarea>
+            <input required type="text" placeholder="Enter Post Title"  ref={(input)=>this.getTitle = input}></input><br /><br />
+            <textarea required rows="5" cols="28" placeholder="Enter Post" ref={(input)=>this.getMessage = input}></textarea><br /><br />
             <button className="button add-button">Edit</button>
           </form>
         </div>

@@ -3,10 +3,9 @@ import Post from './Post';
 import EditForm from './EditForm';
 
 const AllPosts = (props)=> {
-      let posts= props.posts.map((post)=>{
-          debugger;
+      let posts= props.posts.map((post,id)=>{
           return(
-            <Fragment>
+            <Fragment key={id}>
               <Post post={post} editPost={props.editPost} deletePost={props.deletePost}/>
               <div style={{display :(post.editing ? 'block':'none')}}><EditForm post={post} editPost={props.editPost} updatePost={props.updatePost}/> </div>
             </Fragment>

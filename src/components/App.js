@@ -12,9 +12,9 @@ const App =(props)=> {
         </div>
         <PostForm addPost={(data)=>{props.addPost(data)}}/>
         <AllPosts posts={props.posts}
-              editPost={(data)=>{debugger;props.editPost(data)}}
-              updatePost={(data)=>{debugger;props.updatePost(data)}}
-              deletePost={(data)=>{debugger;props.deletePost(data)}}
+              editPost={(data)=>{props.editPost(data)}}
+              updatePost={(data)=>{props.updatePost(data)}}
+              deletePost={(data)=>{props.deletePost(data)}}
         />
     </div>
     );
