@@ -22,7 +22,7 @@ export default class PostForm extends Component {
         <form className="form" onSubmit={this.handleSubmit}>
           <input required type="text" placeholder="Enter Post Title" ref={(input)=>this.getTitle = input}  /><br /><br />
           <textarea required rows="5" cols="28" placeholder="Enter Post" ref={(input)=>this.getMessage = input}/><br /><br />
-          <button>Post</button>
+          <button className="button add-button">Post</button>
         </form>
       </div>
     );
